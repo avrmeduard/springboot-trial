@@ -1,10 +1,7 @@
 package avrm.demo.springBootMvc.domain;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Set;
 
 @Entity
@@ -16,6 +13,10 @@ public class Author {
 
     private String firstName;
     private String lastName;
+
+    @ManyToMany
+    @JoinTable(name = "author_book", joinColumns = @JoinColumn(name = "book_id"),
+               inverseJoinColumns = @JoinColumn(name = "author_id"))
     private Set <Book> books;
 
     public Author() {
