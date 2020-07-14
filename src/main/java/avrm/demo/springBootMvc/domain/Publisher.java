@@ -18,7 +18,7 @@ public class Publisher {
     private String state;
     private String zip;
 
-    @ManyToOne
+    @OneToMany
     @JoinColumn(name = "publisher_id")
     private Set <Book> books = new HashSet <>();
 
