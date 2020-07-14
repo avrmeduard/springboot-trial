@@ -40,18 +40,29 @@ public class BootStrapData implements CommandLineRunner {
 
         ion.getBooks().add(capra);
         capra.getAuthors().add(ion);
+
+        capra.setPublisher(publisher);
+        publisher.getBooks().add(capra);
+
         authorRepository.save(ion);
         bookRepository.save(capra);
+        publisherRepository.save(publisher);
 
         Author mih = new Author("Mihai", "Eminescu");
         Book poezii = new Book("Luceafarul", "99328290");
 
         mih.getBooks().add(poezii);
         poezii.getAuthors().add(mih);
+
+        poezii.setPublisher(publisher);
+        publisher.getBooks().add(poezii);
+
         authorRepository.save(mih);
         bookRepository.save(poezii);
+        publisherRepository.save(publisher);
 
         System.out.println("Number of books added : " + bookRepository.count());
+        System.out.println("Publisher number of books " + publisher.getBooks().size());
 
     }
 }
