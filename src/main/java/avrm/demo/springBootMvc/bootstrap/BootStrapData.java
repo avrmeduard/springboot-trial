@@ -35,8 +35,8 @@ public class BootStrapData implements CommandLineRunner {
         publisherRepository.save(publisher);
         System.out.println("Publisher added are : " + publisherRepository.count());
 
-        Author ion = new Author("Ion", "Creanga");
-        Book capra = new Book("Capra cu 3 iezi", "42493077");
+        Author ion = new Author("Camil", "Creanga");
+        Book capra = new Book("Kubernetes", "42493077");
 
         ion.getBooks().add(capra);
         capra.getAuthors().add(ion);
