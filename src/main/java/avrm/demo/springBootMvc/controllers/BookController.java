@@ -6,11 +6,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class BookControler {
+public class BookController {
 
     private BookRepository bookRepository;
 
-    public BookControler(BookRepository bookRepository) {
+    public BookController(BookRepository bookRepository) {
         this.bookRepository = bookRepository;
     }
 
@@ -18,6 +18,7 @@ public class BookControler {
     public String getBooks(Model model) {
 
         model.addAttribute("books",bookRepository.findAll());
-        return "books/list";
+
+        return "list";
     }
 }
