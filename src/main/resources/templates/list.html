@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -13,10 +13,10 @@
         <th>Title</th>
         <th>Publisher</th>
     </tr>
-    <tr>
-        <th>123</th>
-        <th>Spring in action</th>
-        <th>Wax</th>
+    <tr th:each="book : ${books}">
+        <th th:text="${book.id}">123</th>
+        <th th:text="${book.title}">Spring in action</th>
+        <th th:text="${book.publisher.name}">Wax</th>
     </tr>
 
 </table>
