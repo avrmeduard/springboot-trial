@@ -14,10 +14,11 @@ public class AuthorController {
         this.authorRepository = authorRepository;
     }
 
-    @RequestMapping("/author")
+    @RequestMapping("/authors")
     public String getAuthor(Model model) {
 
-        model.addAttribute("author", authorRepository.findAll());
-        return "author/list";
+        model.addAttribute("authors", authorRepository.findAll());
+
+        return "author";
     }
 }
